@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta id="viewport" content="width=device-width, initial-scale=1">
+  <title>SDK</title>
+  <!-- Ewawe Logo Icon-->
+  <link rel="icon" href="{{url_for('static',filename='icon.png')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{url_for('static',filename='plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{{url_for('static',filename='plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <!-- BS Stepper -->
+  <link rel="stylesheet" href="{{url_for('static',filename='plugins/bs-stepper/css/bs-stepper.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{url_for('static',filename='dist/css/adminlte.min.css')}}">
+</head>
+<body class="hold-transition login-page">
+<div class="text-center"></div>
+
+  <div class="login-logo">
+    <a href="."><b>CKD</b> Monitoring System</a>
+  </div>
+  
+  <div class="card card-default">
+    <div class="card-header">
+      <h3 class="card-title">Personal Information</h3>
+    </div>
+    <div class="card-body p-0">
+      <div class="bs-stepper">
+        <div class="bs-stepper-header" role="tablist">
+          <!-- your steps here -->
+          <div class="step" data-target="#logins-part">
+            <button type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+              <span class="bs-stepper-circle">1</span>
+              <span class="bs-stepper-label">Step 1</span>
+            </button>
+          </div>
+          <div class="line"></div>
+          <div class="step" data-target="#information-part">
+            <button type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger">
+              <span class="bs-stepper-circle">2</span>
+              <span class="bs-stepper-label">Step 2</span>
+            </button>
+          </div>
+          <div class="line"></div>
+          <div class="step" data-target="#setup-part">
+            <button type="button" class="step-trigger" role="tab" aria-controls="setup-part" id="setup-part-trigger">
+              <span class="bs-stepper-circle">3</span>
+              <span class="bs-stepper-label">Step 3</span>
+            </button>
+          </div>
+          <div class="step" data-target="#setup-parts">
+            <button type="button" class="step-trigger" role="tab" aria-controls="setup-parts" id="setup-parts-trigger">
+              <span class="bs-stepper-circle">4</span>
+              <span class="bs-stepper-label">Step 4</span>
+            </button>
+          </div>
+        </div>
+        <div class="bs-stepper-content">
+          <!-- your steps content here -->
+          <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
+            <div class="form-group">
+              <label for="exampleInputtext1">Age</label>
+              <input type="text" class="form-control" placeholder="Enter your age" id="age">
+          </div>
+            <div class="form-group">
+                <label for="exampleInputtext1">Blood pressure</label>
+                <input type="text" id="bpr" class="form-control" placeholder="Enter your blood pressure">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputtext1">Specific gravity</label>
+                <input type="text" id="sg" class="form-control"  placeholder="Enter Specific gravity">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputtext1">Albumin</label>
+              <input type="text" id="al" class="form-control"  placeholder="Enter your Albumin">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputtext1">Sugar</label>
+            <input type="text" id="su" class="form-control"  placeholder="Enter your Sugar">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputtext1">Red blood cells</label>
+          <select name="rbc" id="rbc" class="form-control">
+            <option value="normal" selected>Normal</option>
+            <option  value="abnormal">Abnormal</option>
+        </select>
+      </div>
+            <button class="btn btn-primary" onclick="stepper.next()">Next</button>
+          </div>
+          <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
+            <div class="form-group">
+              <label for="exampleInputtext1">Pus cell</label>
+              <input type="text" id="pc" class="form-control"  placeholder="Enter your Pus cell">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputtext1">Pus cell clumps</label>
+            <select name="pcc" id="pcc"class="form-control">
+              <option value="notpresent" selected>Not Present</option>
+              <option  value="present">Present</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputtext1">Bacteria</label>
+          <select name="ba" id="ba" class="form-control">
+            <option value="notpresent" selected>Not Present</option>
+            <option  value="present">Present</option>
+        </select>
+          
+      </div>
+      <div class="form-group">
+        <label for="exampleInputtext1">Blood glucose random</label>
+        <input type="text" id="bgr" class="form-control"  placeholder="Enter your Blood glucose random<">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputtext1">Blood urea</label>
+      <input type="text" id="bu" class="form-control" placeholder="Enter your Blood urea<">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputtext1">Serum creatinine</label>
+    <input type="text" id="sc" class="form-control" placeholder="Enter your Serum creatinine">
+</div>
+            <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
+            <button class="btn btn-primary" onclick="stepper.next()">Next</button>
+          </div>
+          <div id="setup-part" class="content" role="tabpanel" aria-labelledby="setup-part-trigger">
+            <div class="form-group">
+              <label for="exampleInputtext1"> Sodium</label>
+              <input type="text" id="sod" class="form-control"  placeholder="Enter your Sodium">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputtext1">Potassium</label>
+            <input type="text" id="pot" class="form-control" placeholder="Enter your Potassium">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputtext1">Hemoglobin</label>
+          <input type="text" id="hem" class="form-control"  placeholder="Enter your Hemoglobin">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputtext1">Packed cell volume</label>
+        <input type="text" id="pcv" class="form-control"  placeholder="Enter your Packed cell volume">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputtext1">White blood cell count</label>
+      <input type="text" id="wc" class="form-control" placeholder="Enter your White blood cell count">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputtext1">Red blood cell count</label>
+    <input type="text" id="rc" class="form-control" placeholder="Enter your Red blood cell count">
+</div>
+<button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
+<button class="btn btn-primary" onclick="stepper.next()">Next</button>
+   
+
+</div>
+          <div id="setup-parts" class="content" role="tabpanel" aria-labelledby="setup-parts-trigger">
+            <div class="form-group">
+              <label for="exampleInputtext1">Hypertension</label>
+              <select name="htn" id="htn" class="form-control">
+                <option value="no" selected>No</option>
+                <option  value="yes">Yes</option>
+            </select>
+             
+          </div>
+          <div class="form-group">
+            <label for="exampleInputtext1">Diabetes mellitus</label>
+            <select name="dm" id="dm" class="form-control">
+              <option value="no" selected>No</option>
+              <option  value="yes">Yes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputtext1">Coronary artery disease</label>
+          <select name="cad" id="cad" class="form-control">
+            <option value="no" selected>No</option>
+            <option  value="yes">Yes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputtext1">Appetite</label>
+        <select name="appet" id="appet" class="form-control">
+          <option value="good" selected>Good</option>
+          <option  value="poor">Poor</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputtext1">Pedal edema</label>
+      <select name="pe" id="pe" class="form-control">
+            <option value="no" selected>No</option>
+            <option  value="yes">Yes</option>
+        </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputtext1">Anemia</label>
+    <select name="ane" id="ane" class="form-control">
+      <option value="no" selected>No</option>
+      <option  value="yes">Yes</option>
+  </select>
+</div>
+            <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
+            <button type="submit" id="sub_form" class="btn btn-primary">Submit</button>
+          </div>
+    <!-- /.card-body -->
+    
+  </div>
+
+  <!-- /.card -->
+
+
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="{{url_for('static',filename='plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{url_for('static',filename='plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{url_for('static',filename='dist/js/adminlte.min.js')}}"></script>
+<!-- Bootstrap Switch -->
+<script src="{{url_for('static',filename='plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
+<!-- BS-Stepper -->
+<script src="{{url_for('static',filename='plugins/bs-stepper/js/bs-stepper.min.js')}}"></script>
+<script>
+    $(function () {
+        $('input[name="switch"]').bootstrapSwitch();})
+        // BS-Stepper Init
+    document.addEventListener('DOMContentLoaded', function () {
+    window.stepper = new Stepper(document.querySelector('.bs-stepper'))})
+</script>
+<script src="{{url_for('static',filename='jquery-3.3.1.min.js')}}"></script>
+
+<script>
+$(document).ready(function(){
+  $("#sub_form").click(function(){
+
+    var age = $("#age").val()
+    var bpr = $("#bpr").val()
+    var sg = $("#sg").val()
+    var al = $("#al").val()
+    var su = $("#su").val()
+    var rbc = $("#rbc").val()
+    var pc = $("#pc").val()
+    var pcc = $("#pcc").val()
+    var ba= $("#ba").val()
+    var bgr = $("#bgr").val()
+    var bu= $("#bu").val()
+    var sc = $("#sc").val()
+    var sod = $("#sod").val()
+    var pot = $("#pot").val()
+    var hem = $("#hem").val()
+    var pcv = $("#pcv").val()
+    var wc = $("#wc").val()
+    var rc = $("#rc").val()
+    var htn = $("#htn").val()
+    var dm = $("#dm").val()
+    var cad = $("#cad").val()
+    var appet = $("#appet").val()
+    var pe = $("#pe").val()
+    var ane = $("#ane").val()
+
+    $.ajax({
+      url:"{{url_for('handle_form')}}",
+      method:"POST",
+      data:{
+        age:age, bpr:bpr,sg:sg,al:al,su:su,rbc:rbc,pc:pc,pcc:pcc,
+        ba:ba,bgr:bgr,bu:bu,sc:sc,sod:sod,pot:pot,hem:hem,pcv:pcv,wc:wc,rc:rc,
+        htn:htn,dm:dm,cad:cad,appet:appet,pe:pe,ane:ane
+
+      },
+      success:function(data){
+        if(data['result'==1]){
+          alert("You have tested Positive")
+        }
+        else{
+          alert("You have tested Negative")
+        }
+
+        window.location.href="{{url_for('Home')}}"
+
+        //console.log(data['result'])
+
+      }
+
+    });
+  })
+
+})
+</script>
+</body>
+</html>
