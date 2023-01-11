@@ -1,8 +1,3 @@
-detectlanguage
-Flask
-Flask_Cors
-flask_ngrok
-nltk
-numpy
-request
-torch
+flask
+pickle
+pandas
