@@ -1,4 +1,3 @@
-torch
 detectlanguage
 Flask
 Flask_Cors
@@ -6,4 +5,4 @@ flask_ngrok
 nltk
 numpy
 request
-
+torch
