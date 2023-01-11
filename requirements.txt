@@ -1,3 +1,4 @@
+python==3.9
 detectlanguage==1.5.0
 Flask==2.2.2
 Flask_Cors==3.0.10
